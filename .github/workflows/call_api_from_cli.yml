@@ -1,4 +1,4 @@
-name: Print github event
+name: call_api_from_cli
 on:
   workflow_dispatch:
 jobs:
