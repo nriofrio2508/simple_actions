@@ -16,4 +16,4 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Event json
         run: |
-          echo ${{ toJSON(github.event)}}
+          echo ${{ toJSON(github)}}
