@@ -19,7 +19,7 @@ jobs:
           gh api -X GET   /users/${{ github.triggering_actor }}
       - name: user
         run: |
-          git config user.email
+          git config user.email "$(git log -n 1 --pretty=format:%ae)"
     env:
        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
