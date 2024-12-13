@@ -1,5 +1,5 @@
 
-name: CI
+name: Print github event
 
 on:
   workflow_dispatch:
