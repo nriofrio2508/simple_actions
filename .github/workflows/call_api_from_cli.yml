@@ -20,6 +20,16 @@ jobs:
       - name: user
         run: |
           git config user.email "$(git log -n 1 --pretty=format:%ae)"
+
+      - name: get email
+        id: test
+        uses: evvanErb/get-github-email-by-username-action@v1.25
+        with:
+          github-username: 'nriofrio2508'
+          
+      # Use the output from the `test` step
+      - name: Print the found email
+        run: echo "The email is ${{ steps.test.outputs.email }}" # Example of how to access output email
     env:
        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
