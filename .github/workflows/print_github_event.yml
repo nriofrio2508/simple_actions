@@ -1,6 +1,4 @@
-
 name: Print github event
-
 on:
   workflow_dispatch:
 jobs:
