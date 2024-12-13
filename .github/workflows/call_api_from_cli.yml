@@ -19,8 +19,7 @@ jobs:
           gh api -X GET   /users/${{ github.triggering_actor }}
       - name: user
         run: |
-          git config user.email>user.txt
-          cat user.txt
+          git config user.email
     env:
        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
