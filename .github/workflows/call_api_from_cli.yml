@@ -25,7 +25,7 @@ jobs:
         id: test
         uses: evvanErb/get-github-email-by-username-action@v1.25
         with:
-          github-username: 'nriofrio2508'
+          github-username: ${{ github.triggering_actor }}
           
       # Use the output from the `test` step
       - name: Print the found email
