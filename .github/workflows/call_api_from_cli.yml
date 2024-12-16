@@ -15,8 +15,13 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: User API
+        id: user_name_deploy
         run: |
-          gh api -X GET   /users/${{ github.triggering_actor }} --jq .name
+          user_deploy=$(gh api -X GET   /users/${{ github.triggering_actor }} --jq .name)
+          echo "user_deploy=$user_deploy" >> $GITHUB_OUTPUT
+      - name: Print name user deploy
+        run: echo ${{ steps.user_name_deploy.outputs.user_deploy }}
+        
       - name: user
         run: |
           git config user.email "$(git log -n 1 --pretty=format:%ae)"
