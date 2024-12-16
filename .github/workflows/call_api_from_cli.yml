@@ -16,7 +16,7 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: User API
         run: |
-          gh api -X GET   /users/${{ github.triggering_actor }}
+          gh api -X GET   /users/${{ github.triggering_actor }} --json name
       - name: user
         run: |
           git config user.email "$(git log -n 1 --pretty=format:%ae)"
