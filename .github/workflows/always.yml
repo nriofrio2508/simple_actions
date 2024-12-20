@@ -21,14 +21,14 @@ jobs:
           echo "user_deploy=$user_deploy" >> $GITHUB_OUTPUT
       - name: Print name user deploy
         run: echo ${{ steps.user_name_deploy.outputs.user_deploy }}
-      - name: User API
+      - name: User Skyp
         id: skpy
         if: false
         run: |
           my_comment = "Nombre es"
           echo "my_comment=$my_comment" >> $GITHUB_OUTPUT
       - name: Print my name
-        run: ${{ steps.skpy.outputs.my_comment }}
+        run: echo ${{ steps.skpy.outputs.my_comment }}
       - name: Print name user deploy
         run: echo ${{ steps.user_name_deploy.outputs.user_deploy }}
         
